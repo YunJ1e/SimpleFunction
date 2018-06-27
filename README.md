@@ -1,4 +1,4 @@
 # SimpleFunction
-Simple function implementations
+Simple Function Implementations
 
-Just trying to do some exercises to keep myself always being a study mode
+Just trying to do some exercises to keep myself always being in a study mode

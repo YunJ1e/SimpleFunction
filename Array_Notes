@@ -32,7 +32,7 @@ C-Strings
 
 Arrays as look-up tables
 1. Look-up table is data structure that performs X -> Y mapping function
-	val = Y[X]
+	val = Y[X] 
 
 Multi-Dimensional arrays
 1. 2D arrays are index with two[][]

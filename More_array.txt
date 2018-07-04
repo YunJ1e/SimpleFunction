@@ -1,0 +1,26 @@
+One more advantage of using pointers
+	1. When we need a variable address. we do not know, or we cannot know the address of a desired memory address at compile time.
+
+Dynamic Memory
+	1. It is on-demand-memory
+	2. This memory is allocated on the heap, and we need to release it back to the heap
+
+The heap
+	1. It is an area of memory that can grow/shrink as your program executes
+	2. Heap and stack have chances to collide
+
+C++ dynamic memory allocation
+	1. 'new' operator ,and it will return a pointer to the newly allocated memory
+	eg. double *dptr = new double;
+		int* array = new int[100];
+	2. 'delete' operator gives the memory back
+	eg. delete dptr;
+		delete[] array;
+	Tips:Never return a pointer to a local variable
+	eg. int* ans = new int;/ int ans; return &ans;
+	3. Multi-Dimensional allocation
+	eg. 2-D: int** image = new int*[X];
+			 image[i] = new int[Y];
+		3-D: int*** array = new int**[X];
+			 array[i] = new int*[Y];
+			 array[i][j] = new int[Z];

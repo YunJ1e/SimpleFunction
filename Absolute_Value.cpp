@@ -8,7 +8,7 @@ int abs(int x) {
 		return x;
 	}
 	if (x < 0) {		// This line may cause the program reach the 
-		return -x;	// non-void function, so change the if to else
+		return -x;	// non-void function, so change the if to else statement
 	}
 } 
 

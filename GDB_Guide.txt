@@ -1,0 +1,25 @@
+Background Information of GNU Debugger
+	1. To debug a program you must tell the compiler to provide extra information for the debugger in the executable file. 
+	2. If you ever directly use a compiler like clang++ or g++, you would pass this flag as a command-line argument to the compiler like this: 
+ 
+		eg. clang++ -g program.cpp -o program 
+	3. The compile command automatically includes -g and -Wall
+
+Starting Up GDB
+	1. Once a program has been compiled that you want to debug, you start the gdb debugger program with the command  
+		gdb EXECUTABLE_NAME 
+	2. Once gdb has started, it gives you a new debugger console. You can now run the executable using by entering run or r. 
+	3. If you need to add command line arguments, you can add them when you run the executable.
+		eg. run ARG_1 ARG_2 ...
+
+Breakpoints and Pringting Info
+	1. If your program has a segmentation fault, memory error, or other program-terminating problem, gdb will halt and let you know that you have hit an error. 
+	2.  To set a breakpoint, use the break command. The break requires a line number to be specified, and if there are multiple source files, you must specify which one.
+		eg.break LINE_NUMBER / break sourcefile.cpp:LINE_NUMBER
+	3. When your program is stopped, here are two commands to extract information, which will help you to identify the bugs in your code
+		eg. print VARIABLE_NAME will print the value of a given variable name. 
+		eg. backtrace or bt will print the stack trace; this will show you the functions that have been called up to the point of the crash. 
+	4. To delete a breakpoint: delete BREAKPOINT_NUMBER 
+	   To list all breakpoints: info breakpoints 
+	   To quit gdb: quit
+	5. More info: man gdb

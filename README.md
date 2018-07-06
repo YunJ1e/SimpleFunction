@@ -1,4 +1,4 @@
-## C/C++ Excercises 
+# C/C++ Excercises 
 
 Problems are all from the bits.usc.edu/cs103
 
@@ -13,3 +13,6 @@ Function Implementations (Pointer-Focused, Command Line Input)
 
 ## 2018/07/04
 Function Implementations (Dynamically Allocate, Multi-Dimensional arrays)
+
+## 2018/07/05
+FUnction Implementations (Image Processing)

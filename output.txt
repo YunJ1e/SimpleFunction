@@ -1,0 +1,2 @@
+Int from file is 5
+Double from file is -3.5

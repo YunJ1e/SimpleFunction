@@ -1,0 +1,3 @@
+The fox jumped over the log.
+The bear ate some honey.
+The CS student solved a hard problem.

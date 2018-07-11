@@ -18,3 +18,6 @@ Function Implementations (Image Processing)
 
 ## 2018/07/09
 Hangman Game (Mainly Use Char*)
+
+## 2018/07/10
+C++ I/O Stream Function Implementations ()

@@ -1,0 +1,74 @@
+File I/O
+
+I/O Streams
+	1. I/O is placed in temporary buffers/streams by the OS & C++ libraries
+	2. cin pull data from an input stream known as stdin
+		'>>' operator used to read data from an input stream
+		Always stops at whitespace
+	3. cout puts data in an output stream know as stdout
+		'endl' forces a flush
+		Flush forces the OS to move data from the internal OS stream to the actual output device
+
+File I/O Intro
+	1. cin & commandline(argc,argv) can provide a program input
+	2. Also File I/O (accessing data in files)
+	3. OS-based tools to read/write file data
+		I/O redirection via OS (use of < and > at command line)
+		Pipes via the OS (use of | at command line)
+	4. Output redirection: >
+		What would have displayed on the screen is now in the file
+	5. Input redirection: <
+		The output captured from the file is now used as input 
+	6. Pipes: |
+		./randgen 20 10 | ./average
+		The output of randgen is fed as input to average
+
+Input & Output Streams
+There are other types of input and output streams other than cin and cout
+	1. cin stops reading at whitespace
+		i.		If you want to read whole line of text, use cin.getline()
+		ii.		It will read spaces and tabs but stop at '\n'
+		iii.	cin .getline(char* buffer, int max_chars) reads max_chars-1 leaving space for the null char
+	2. Input Stream Error Checking
+		i.		cin may receive unexpected data that cannot be converted to the give type
+		ii.		Use the function cin.fail() which returns true if anything went wrong opening data in from the file
+	3. More on Error Checking
+		i.		Use the fail() to detect errors when attempting to read data
+		ii.		If a call to fail() returns true then subsequent calls to fail() will continue to return true until you call clear()
+		iii.	Use ignore() to clean out any text still in the input stream
+
+File Streams (How your program can directly access data in files)
+	1. Computer Organization
+		i.		Processor can only talk directly to RAM, it needs the 'translation' to access the data
+		ii.		All code and data reside in RAM
+		iii.	The OS provides routines to perform the translation
+	2. Starting File I/O
+		i.		Read info from the file
+					Use an 'ifstream' object to open the file
+					Read data from the file
+					Close it when you are done
+		ii.		Write info to the file
+					Use 'ofstream' object
+					Write the data to a file
+					Close it when you are done
+	3. Two Kinds of Files: Binary & Text
+	Files as "streams" (linear arrays) of data
+		i.		Text Files: File is just a large sequence of ASCII characters (every piece of data is just a byte)
+		ii.		Binary Files: Data in the file is just bits that can be retrieved in different size chunks (4-byte int, 8-byte double etc.)
+
+Text File I/O
+	1. Use ifstream object/variable for reading a file
+	2. Use ofstream object/variable for writing a file
+	3. Must include <fstream>
+
+Getting Lines of Text
+	1. The >> operator will implicitly stops at the first whitespace
+	2. ifile.getline(char* buf, int bufsize); Reads max of bufsize - 1 characters including newline
+
+File Location/Pointer & Input Operators
+	1. File Access
+		i.		Your ifsream object implicitly keeps track of where you are in the file
+		ii.		EOF	or other errormeans no more data can be read.
+		iii.	Use the fail() function to ensure the file is okay for reading and writing
+	2. Operator
+		i.		

@@ -71,4 +71,12 @@ File Location/Pointer & Input Operators
 		ii.		EOF	or other errormeans no more data can be read.
 		iii.	Use the fail() function to ensure the file is okay for reading and writing
 	2. Operator
-		i.		
+		i.		To get the raw data from the file including whitespaces, use ifstream::get()
+		ii.		To see what the next character is without moveing the pointer on to the next char, use ifstream::peek()
+	3. Changing File Pointer Location (ifstream)
+	Jump around to particular byte locations
+		i.		ifstream.seekg()
+					Go to a particular byte location
+					Pass an offset relative from current position of absolute byte from start or end of file
+		ii.		ifstream.tellg()
+					Return the current location's byte-offset from the beginning of the file

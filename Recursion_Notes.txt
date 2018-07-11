@@ -1,0 +1,64 @@
+Recursion
+Defining an object, mathematical function, or computer function in terms of itself.
+
+1. Basics
+	i. Problems in which the solution can be expressed in terms of itself and a base/terminating case
+	ii.Input to the problem must be categorized as a:
+		Base case: 			Solution known beforehand or easily computable
+		Recursive case: 	si\\SOluction can be decribed using solutions to smaller problems of the same type
+	iii.Eg. Factorial: n! = n * (n-1) * (n-2) * ... * 2 * 1
+					   n! = n * (n-1)!
+					   Base case: n = 1
+					   Recursive case: n > 1 => n * (n-1)!
+
+2. Recursive Functions
+	i.	The system stack essentially provides seperate areas of memory for each instance of a function
+	ii.	Each local variable and actual parameter of a function has its own value within that particular function instance's memory space
+	iii. Value/version of n is implicitly saved and restored as we move from one instance of the fact function to the next
+	iv.	Loop or Recursion: Iteration is usually faster and uses less impossible
+						   However, if iteration produces a very complex solution, consider recursion
+
+3, Head V.s Tail Recursion
+ 	i. Head Recursion: Recursive call is made before the real work is performed in the function body
+ 	ii. Tail Recursion: Some work is performed and then the recursive call is made
+
+Recursion Example
+ Every instance of a function has its own copy of local variables
+ 	int rsum(int data[], int len){
+ 		if(len == 1){
+ 			return data[0];
+ 		}
+ 		else{
+ 			int sum = rsum(data, len-1);
+ 			return sum + data[len-1];
+ 		}
+ 	}
+
+4. Recursion Double Check
+	i.		Check that you have appropriate base cases (The most important)
+	ii.		Check that each recursive call makes progress toward the base case
+				Otherwise you will get an infinite loop and stack overflow
+	iii.	Check that you use a return statement at each level to return appropriate values back to each recursive call
+
+5. Sorting
+If you have unordered list, sequential search becomes your only choice
+If we will perform a lot of searches it may be beneficial to sort the list, use the binary search
+	i.		Bubble Sort(Simple but not efficient)
+				On each pass thru the list, pick up the maximum element and place it at the end of the list
+				Then repeat using a list of size n-1 
+				Example
+				n = length
+				for(i = n-2; i>=1; i--)
+					for(j = 1; i<=1; j++)
+						if(List[j] > List[j+1])
+						then swap List[j] and List[j+1]
+	ii.		Recursive Sort(MergeSort)
+				Break sorting problem into smaller sorting problems and merge the results at the end
+				Mergesort(0..n-1)
+					if list size is 1, return
+					else
+					Mergesort(0..n/2)
+					Mergesort(n/2 + 1...n-1)
+					Combine each sorted list of n/2 elements into a sorted n-element list
+					
+
